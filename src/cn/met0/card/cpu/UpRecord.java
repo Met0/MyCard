@@ -1,4 +1,4 @@
-package cn.met0.card;
+package cn.met0.card.cpu;
 
 
 import java.util.HashMap;
@@ -15,7 +15,7 @@ import cn.met0.util.MacKey;
  * @author ãÆºÅÑô
  *
  */
-public class UpRecord extends CardManage {
+public class UpRecord extends CpuCardManage {
 
 	public UpRecord(SerialPortsListener sp) throws Exception {
 		super(sp);
@@ -25,8 +25,8 @@ public class UpRecord extends CardManage {
 	 * Ð´Èë×â³µ¼ÇÂ¼
 	 */
 	@Override
-	public Map Manage() throws Exception {
-
+	public Map manage() throws Exception {
+		super.inIt();
 		String response = null;
 		int responseLen = 0;
 		Map result = new HashMap();

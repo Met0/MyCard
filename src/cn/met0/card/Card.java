@@ -1,6 +1,10 @@
 package cn.met0.card;
 
+import java.util.Map;
 
-public abstract class Card {
 
+public interface Card {
+
+	Map manage() throws Exception;
+	void inIt() throws Exception;
 }

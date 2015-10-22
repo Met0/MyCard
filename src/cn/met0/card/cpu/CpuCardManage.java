@@ -1,12 +1,16 @@
-package cn.met0.card;
+package cn.met0.card.cpu;
 
 
-import java.util.Map;
-
+import cn.met0.card.Card;
 import cn.met0.comm.SerialPortsListener;
 import cn.met0.comm.command.Command;
 
-public abstract class CardManage extends Card {
+/**
+ * cpu卡片
+ * @author 闫号阳
+ *
+ */
+public abstract class CpuCardManage implements Card {
 
 	
 	
@@ -19,20 +23,18 @@ public abstract class CardManage extends Card {
 	
 	
 	/**
-	 * 初始化卡片管理
+	 * 初始化卡片
 	 * @param sp
 	 * @throws Exception 
 	 */
-	public CardManage(SerialPortsListener sp) throws Exception{
+	public CpuCardManage(SerialPortsListener sp) throws Exception{
 		this.sp = sp;
-		inIt();
 	}
-		
+	
 	/**
-	 * 卡片操作前的初始化
-	 * @throws Exception 
+	 * cpu卡片初始化
 	 */
-	protected void inIt() throws Exception {
+	public void inIt() throws Exception {
 
 		String response = null;
 		
@@ -57,11 +59,6 @@ public abstract class CardManage extends Card {
 		}
 
 	}
-
-	/**
-	 * 卡片管理
-	 * @return
-	 */
-	public abstract Map Manage() throws Exception;
+		
 	
 }

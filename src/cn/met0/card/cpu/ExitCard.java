@@ -1,8 +1,9 @@
-package cn.met0.card;
+package cn.met0.card.cpu;
 
 
 import java.util.HashMap;
 import java.util.Map;
+
 import cn.met0.comm.SerialPortsListener;
 import cn.met0.comm.command.Command;
 import cn.met0.util.DesUtil;
@@ -13,15 +14,15 @@ import cn.met0.util.DesUtil;
  * @author „∆∫≈—Ù
  *
  */
-public class ExitCard extends CardManage {
+public class ExitCard extends CpuCardManage {
 
 	public ExitCard(SerialPortsListener sp) throws Exception {
 		super(sp);
 	}
 
 	@Override
-	public Map Manage() throws Exception {
-
+	public Map manage() throws Exception {
+		super.inIt();
 		String response = null;
 		int responseLen = 0;
 		Map result = new HashMap();
