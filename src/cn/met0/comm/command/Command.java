@@ -3,8 +3,6 @@ package cn.met0.comm.command;
 import org.apache.log4j.Logger;
 
 import cn.met0.util.ArrayUtil;
-import cn.met0.util.DesUtil;
-import cn.met0.util.MacKey;
 
 public class Command {
 

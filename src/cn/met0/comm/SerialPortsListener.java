@@ -3,7 +3,6 @@ package cn.met0.comm;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.PrintStream;
 import java.util.TooManyListenersException;
 
 import javax.comm.SerialPort;
@@ -148,7 +147,7 @@ public class SerialPortsListener implements SerialPortEventListener {
 		}
 		
 		//返回的信息体
-		String reqinfo=re.substring(9,len+5);
+		String reqinfo=re.substring(9, len + 5);
 		
 		
 		//如果是APDU指令，并且状态码不是 9000
@@ -158,6 +157,8 @@ public class SerialPortsListener implements SerialPortEventListener {
 			String status = reqinfo.substring(reqinfoLen - 4, reqinfoLen);
 			if( ! "9000".equals(status))
 			return null;
+		}else{
+			return re;
 		}
 		
 		log.info("response data: "+reqinfo);
